@@ -6,18 +6,14 @@ function Hero() {
       id="hero"
       className="min-h-screen flex items-center justify-center px-6"
     >
-      <div className="max-w-3xl text-center space-y-8">
-        <img
-          src="/logo.png"
-          alt="Alas de Luz Divina"
-          className="mx-auto w-48"
-        />
+      <div className="max-w-3xl mx-auto flex flex-col items-center gap-8 text-center">
+        <img src="/logo.png" alt="Alas de Luz Divina" className="w-[400px]" />
 
         <h1 className="text-5xl leading-tight">
           Reconecta con la luz que siempre ha vivido en ti.
         </h1>
 
-        <p className="text-lg max-w-2xl mx-auto">
+        <p className="text-lg max-w-2xl">
           Un espacio de acompañamiento espiritual donde encontrarás escucha,
           amor y herramientas para vivir tu propio proceso de transformación.
         </p>
