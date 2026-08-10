@@ -3,6 +3,9 @@ export interface Service {
   title: string
   description: string
   price: number
+  duration?: string
+  modality?: string
+  checklist?: string[]
 }
 
 export interface Testimonial {
