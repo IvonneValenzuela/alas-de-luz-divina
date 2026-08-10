@@ -14,16 +14,12 @@ function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-[#faf7f2]/90 backdrop-blur">
-      <div className="flex items-center justify-between px-6 md:px-12 py-4">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 lg:px-16 py-4">
         <img src="/favicon.png" alt="Alas de Luz Divina" className="h-12" />
 
         <div className="hidden md:flex gap-3">
           {links.map((link) => (
-            <a
-              key={link.id}
-              href={`#${link.id}`}
-              className="px-10 py-3.5 text-base rounded-full bg-[#ead6ad] text-[#3b342d] hover:bg-[#d6b26e] hover:text-white transition-colors"
-            >
+            <a key={link.id} href={`#${link.id}`} className="nav-pill">
               {link.label}
             </a>
           ))}
@@ -56,7 +52,7 @@ function Navbar() {
               key={link.id}
               href={`#${link.id}`}
               onClick={() => setOpen(false)}
-              className="px-8 py-3 text-base rounded-full bg-[#ead6ad] text-[#3b342d]"
+              className="px-7 py-3 text-sm font-medium tracking-wide rounded-full bg-[#ead6ad] text-[#3b342d]"
             >
               {link.label}
             </a>
