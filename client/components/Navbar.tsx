@@ -14,10 +14,10 @@ function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-[#faf7f2]/90 backdrop-blur">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 lg:px-16 py-4">
+      <div className="flex items-center justify-between px-6 lg:px-16 py-4">
         <img src="/favicon.png" alt="Alas de Luz Divina" className="h-12" />
 
-        <div className="hidden md:flex gap-3">
+        <div className="hidden lg:flex gap-3">
           {links.map((link) => (
             <a key={link.id} href={`#${link.id}`} className="nav-pill">
               {link.label}
@@ -27,7 +27,7 @@ function Navbar() {
 
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden text-[#3b342d]"
+          className="lg:hidden text-[#3b342d]"
           aria-label="Abrir menú"
         >
           <svg
@@ -46,13 +46,13 @@ function Navbar() {
       </div>
 
       {open && (
-        <div className="md:hidden flex flex-col items-center gap-3 pb-6">
+        <div className="lg:hidden flex flex-col items-center gap-3 pb-6">
           {links.map((link) => (
             <a
               key={link.id}
               href={`#${link.id}`}
               onClick={() => setOpen(false)}
-              className="px-7 py-3 text-sm font-medium tracking-wide rounded-full bg-[#ead6ad] text-[#3b342d]"
+              className="nav-pill"
             >
               {link.label}
             </a>
