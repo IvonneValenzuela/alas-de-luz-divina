@@ -1,7 +1,12 @@
 function Story() {
   return (
-    <section id="story" className="py-24 px-6 bg-[#faf7f2]">
-      <div className="max-w-2xl mx-auto">
+    <section
+      id="story"
+      className="relative py-24 px-6 bg-cover bg-center"
+      style={{ backgroundImage: "url('/firstbg.png')" }}
+    >
+      <div className="absolute inset-0 bg-white/12" />
+      <div className="relative max-w-2xl mx-auto">
         <h2 className="text-3xl mb-10 text-center">
           Alas de luz divina camino
         </h2>

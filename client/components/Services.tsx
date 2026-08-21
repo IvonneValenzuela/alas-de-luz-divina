@@ -37,7 +37,7 @@ function Services() {
           onClick={() => setSelected(null)}
         >
           <div
-            className="bg-[#fffdf9] rounded-2xl max-w-md w-full p-8 text-left relative"
+            className="bg-[#fffdf9] rounded-2xl max-w-md sm:max-w-xl lg:max-w-2xl w-full p-8 sm:p-10 lg:p-12 text-left relative max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <button
