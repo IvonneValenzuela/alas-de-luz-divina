@@ -21,6 +21,7 @@ npx playwright test # run e2e tests
 - TypeScript uses project references: `tsconfig.json` references `tsconfig.app.json` (app source) and `tsconfig.node.json` (Vite config).
 - Prices are Colombian pesos (COP), formatted with `toLocaleString('es-CO')`.
 - Booking/contact flow is via WhatsApp Business links rather than an in-app form/backend — there is no server-side code in this project.
+- `spec/` — Spec Driven Development documentation: `constitution/constitution.md` holds the mission and roadmap, `features/NNN-name/` holds each feature's spec, plan, and tasks.
 
 ## Stack
 - Language: TypeScript
