@@ -35,6 +35,8 @@ npx playwright test # run e2e tests
 - Design tokens live in `client/styles/main.css` as CSS custom properties: `--color-primary: #d6b26e`, `--color-primary-light: #ead6ad`, `--color-surface: #faf7f2`, `--color-text: #3b342d`, `--color-text-light: #7a7268`, `--color-border: #ebe2d7`. Headings use Cormorant Garamond, body text uses Inter. Reuse these instead of introducing new colors or fonts.
 - Prices, therapy names, and contact details (WhatsApp number, email) must match Paula's infomation exactly, don't paraphrase or estimate them.
 - This site must stay fully responsive across mobile, tablet, and desktop widths. The Navbar switches from pill links to a hamburger menu below the `lg` breakpoint specifically for this. Any layout, spacing, or sizing change must be checked at both mobile and desktop widths before it's considered done.
+- Playwright tests use the Page Object Model. Shared locators and actions live in `tests/pages/HomePage.ts`, since the site is single-page. Add to that class instead of duplicating locators inline in new test files.
+- Decorative overlay divs (`absolute inset-0` tint layers over background images) must include `pointer-events-none`, so they never intercept clicks or text selection from the content above them.
 
 ## Don't
 - Don't run `git commit` or `git push`, stage and describe the change, leave committing to the developer.
