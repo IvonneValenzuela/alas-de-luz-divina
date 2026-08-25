@@ -16,10 +16,17 @@ The About Paula section displays Paula's real biography exactly as she wrote it,
 - [ ] The text keeps its original paragraph breaks, so it reads as separate paragraphs, not one continuous block.
 - [ ] Emojis included in her original text (🤍, ✨, ♥) are preserved.
 - [ ] The section heading uses "Pau", not "Paula" or "Paula Valenzuela", matching how she introduces herself in her own text.
-- [ ] `public/pau.png` is displayed above the biography text.
-- [ ] The biography text is horizontally centred.
+- [ ] On desktop and tablet widths, `public/pau.png` is displayed to the left of the biography text in a two-column layout, with rounded corners, keeping the full photo visible without cropping it into an oval or circle shape. On mobile widths, the photo stacks above the text instead, per the responsive rule.
+- [ ] The biography text is left-aligned, not centred.
 - [ ] The section is fully readable and correctly laid out on both mobile and desktop widths, per the responsive rule in `/AGENTS.md`.
 - [ ] Text and photo use only the existing design tokens and typography already defined in `main.css`.
+- [ ] Paula's tagline ("Conecta", "Sana", "Transforma") is displayed directly below the photo, stacked one word per line, from `client/data/about.ts` (`paulaTagline`), on both desktop and mobile.
+- [ ] The tagline uses the Great Vibes script font, applied only to this element.
+- [ ] Clicking "Sobre Paula" in the Navbar scrolls to the About Paula section.
+
+## Content
+
+Paula's bio, condensed to 4 paragraphs and confirmed directly with her (the original 12-paragraph draft was shortened, then approved by Paula as the final version). Saved as `client/data/about.ts` (`paulaBio`), source of truth. Do not alter, paraphrase, reorder, or reformat it there
 
 ## Out of scope
 
