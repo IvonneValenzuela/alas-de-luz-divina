@@ -24,6 +24,7 @@
   /* Fonts */
   --font-heading: 'Cormorant Garamond', serif;
   --font-body: 'Inter', sans-serif;
+  --font-tagline: 'Great Vibes', cursive;
 
   /* Shadows */
   --shadow-soft: 0 10px 35px rgba(0, 0, 0, 0.06);
