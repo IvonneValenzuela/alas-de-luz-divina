@@ -7,7 +7,7 @@ function Navbar() {
     { id: 'hero', label: 'Inicio' },
     { id: 'story', label: 'Historia' },
     { id: 'services', label: 'Terapias' },
-    { id: 'about', label: 'Sobre Paula' },
+    { id: 'about-paula', label: 'Sobre Paula' },
     { id: 'testimonials', label: 'Testimonios' },
     { id: 'faq', label: 'Preguntas' },
   ]

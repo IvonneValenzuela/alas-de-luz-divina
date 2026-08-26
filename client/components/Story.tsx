@@ -5,7 +5,7 @@ function Story() {
       className="relative py-24 px-6 bg-cover bg-center"
       style={{ backgroundImage: "url('/firstbg.png')" }}
     >
-      <div className="absolute inset-0 bg-white/12" />
+      <div className="absolute inset-0 bg-white/12 pointer-events-none" />
       <div className="relative max-w-2xl mx-auto">
         <h2 className="text-3xl mb-10 text-center">
           Alas de luz divina camino
@@ -15,7 +15,7 @@ function Story() {
           Hay caminos que no se eligen con la razón, sino con el corazón.
         </p>
 
-        <div className="space-y-6 text-[#7a7268] leading-relaxed">
+        <div className="space-y-6 text-[#7a7268] leading-relaxed text-center">
           <p>
             Alas de Luz Divina nació de un llamado que fui descubriendo a lo
             largo de mi propio camino de transformación.

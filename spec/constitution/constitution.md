@@ -47,10 +47,9 @@ See `/AGENTS.md` at the project root, it's the single source of truth for stack,
 - **Our Story** — Intro text and quote banner, including the background image and brand-colour overlay.
 - **AGENTS.md / CLAUDE.md** — Project constitution set up, read by both Claude Code and OpenCode.
 - **Playwright setup** — Installed and configured, ready for test cases to be written.
+- **001 · About Paula content** — Built out the About Paula section with Paula's real bio, photo, and tagline.
 
 ### Next
-
-- **001 · About Paula content** — Build out the About Paula section (her real bio) and the policies/expectations content in FAQ, using Paula's PDF. Both are currently empty component shells with no content.
 
 ### Backlog / Ideas
 
@@ -59,6 +58,7 @@ See `/AGENTS.md` at the project root, it's the single source of truth for stack,
 - **004 · Testimonials content**
 - **005 · Footer content**
 - **006 · Playwright test cases for existing sections** — Retroactively add end to end tests for Hero, Navigation, Story, and Services, since they were built before Playwright was set up.
+- **007 · FAQ content** — Add real frequently asked questions and answers to FAQ.tsx (cancellation timing is one likely question), once the specific questions and answers are defined. Currently an empty component shell with no content.
 - **Hero background** — Update the current background image.
 - Mobile navigation improvements.
 - Subtle scroll and interaction animations.
