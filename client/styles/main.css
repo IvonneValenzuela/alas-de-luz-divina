@@ -21,6 +21,9 @@
   /* Borders */
   --color-border: #ebe2d7;
 
+  /* Tagline accent */
+  --color-tagline: #e3965f;
+
   /* Fonts */
   --font-heading: 'Cormorant Garamond', serif;
   --font-body: 'Inter', sans-serif;

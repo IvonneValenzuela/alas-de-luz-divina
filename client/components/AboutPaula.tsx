@@ -7,7 +7,7 @@ function AboutPaula() {
       className="relative py-20 px-6 bg-cover bg-center"
       style={{ backgroundImage: "url('/fourthbg.png')" }}
     >
-      <div className="absolute inset-0 bg-white/11" />
+      <div className="absolute inset-0 bg-white/11 pointer-events-none" />
       <div className="relative max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-10 md:gap-14">
         <div className="flex flex-col items-center gap-6 flex-shrink-0">
           <img
@@ -18,7 +18,10 @@ function AboutPaula() {
 
           <div
             className="flex flex-col items-center gap-6 text-center text-6xl text-[#e3965f]"
-            style={{ fontFamily: 'var(--font-tagline)' }}
+            style={{
+              fontFamily: 'var(--font-tagline)',
+              color: 'var(--color-tagline)',
+            }}
           >
             {paulaTagline.map((word) => (
               <span key={word}>{word}</span>

@@ -47,10 +47,9 @@ See `/AGENTS.md` at the project root, it's the single source of truth for stack,
 - **Our Story** — Intro text and quote banner, including the background image and brand-colour overlay.
 - **AGENTS.md / CLAUDE.md** — Project constitution set up, read by both Claude Code and OpenCode.
 - **Playwright setup** — Installed and configured, ready for test cases to be written.
+- **001 · About Paula content** — Built out the About Paula section with Paula's real bio, photo, and tagline.
 
 ### Next
-
-- **001 · About Paula content** — Build out the About Paula section with Paula's real bio text. Currently an empty component shell with no content.
 
 ### Backlog / Ideas
 

@@ -31,8 +31,11 @@ npx playwright test # run e2e tests
 - Tests: Playwright (end to end)
 
 ## Conventions
+## Conventions
 - Client-facing content (copy, therapy names, testimonials) is written in Spanish, but component file names, prop names, and code identifiers stay in English. This project is also a portfolio piece for the New Zealand job market.
 - Design tokens live in `client/styles/main.css` as CSS custom properties: `--color-primary: #d6b26e`, `--color-primary-light: #ead6ad`, `--color-surface: #faf7f2`, `--color-text: #3b342d`, `--color-text-light: #7a7268`, `--color-border: #ebe2d7`. Headings use Cormorant Garamond, body text uses Inter. Reuse these instead of introducing new colors or fonts.
+- Paula's tagline (`paulaTagline`) uses Great Vibes, a script Google Font, imported specifically for this element. Don't use it anywhere else, headings stay in Cormorant Garamond, body text stays in Inter.
+- Paula's tagline also uses a dedicated colour, `--color-tagline: #e3965f`, requested by Paula specifically for this element. Don't reuse it elsewhere or introduce further one-off colours without documenting them here first.
 - Prices, therapy names, and contact details (WhatsApp number, email) must match Paula's infomation exactly, don't paraphrase or estimate them.
 - This site must stay fully responsive across mobile, tablet, and desktop widths. The Navbar switches from pill links to a hamburger menu below the `lg` breakpoint specifically for this. Any layout, spacing, or sizing change must be checked at both mobile and desktop widths before it's considered done.
 - Playwright tests use the Page Object Model. Shared locators and actions live in `tests/pages/HomePage.ts`, since the site is single-page. Add to that class instead of duplicating locators inline in new test files.

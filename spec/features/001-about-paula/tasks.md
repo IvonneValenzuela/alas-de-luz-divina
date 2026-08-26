@@ -23,3 +23,5 @@
 - [x] Added a background image with a semi-transparent brand-colour overlay to the section.
 - [x] Added Paula's tagline ("Conecta", "Sana", "Transforma") in the Great Vibes Google Font, stacked vertically below the photo.
 - [x] Enlarged the photo (~600px) and widened the two-column layout for better visual balance with the final bio length.
+- [x] Enabled Playwright's `baseURL` and `webServer` in `playwright.config.ts` (previously commented out from scaffolding), so `npx playwright test` actually runs against the Vite dev server.
+- [x] Added an explicit 10s timeout to the "Sobre Paula pill scrolls to the About Paula section" test's `toBeInViewport` assertion, to absorb intermittent smooth-scroll delays under WSL resource pressure rather than the default timeout.

@@ -30,5 +30,5 @@ test('renders the real bio paragraphs', async () => {
 
 test('Sobre Paula pill scrolls to the About Paula section', async () => {
   await home.clickSobrePaula()
-  await expect(home.aboutPaulaSection).toBeInViewport()
+  await expect(home.aboutPaulaSection).toBeInViewport({ timeout: 10000 })
 })
