@@ -48,12 +48,12 @@ See `/AGENTS.md` at the project root, it's the single source of truth for stack,
 - **AGENTS.md / CLAUDE.md** — Project constitution set up, read by both Claude Code and OpenCode.
 - **Playwright setup** — Installed and configured, ready for test cases to be written.
 - **001 · About Paula content** — Built out the About Paula section with Paula's real bio, photo, and tagline.
+- **002 · Therapies list & popup redesign** — Added the missing therapies with updated pricing, and redesigned the popup as a flip card: the card shows only the therapy name, and flips to reveal full details on click.
 
 ### Next
 
 ### Backlog / Ideas
 
-- **002 · Therapies list & popup redesign** — Add the missing therapies with updated pricing, and redesign the popup as a flip card: the card shows only the therapy name, and flips to reveal full details on click.
 - **003 · Benefits content**
 - **004 · Testimonials content**
 - **005 · Footer content**
