@@ -7,10 +7,10 @@ function Services() {
 
   return (
     <section id="services" className="py-20 px-6 max-w-5xl mx-auto text-center">
-      <h2 className="text-3xl font-heading mb-4">Nuestras Terapias</h2>
+      <h2 className="text-3xl font-heading mb-4">Terapias</h2>
       <p className="text-[#7a7268] mb-12 max-w-2xl mx-auto">
-        Terapias angelicales para tu bienestar, guiadas con amor y conexión
-        espiritual.
+        Te voy a contar un poquito de mis servicios, ojala tenga la maravillosa
+        oportunidad de acompañarte.
       </p>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -18,15 +18,9 @@ function Services() {
           <button
             key={service.id}
             onClick={() => setSelected(service)}
-            className="text-left p-6 rounded-2xl border border-[#ebe2d7] bg-[#faf7f2] hover:border-[#d6b26e] transition-colors"
+            className="flex items-center justify-center text-center p-8 min-h-[140px] rounded-2xl border border-[#ebe2d7] bg-[#faf7f2] hover:border-[#d6b26e] transition-colors"
           >
-            <h3 className="font-heading text-lg mb-2">{service.title}</h3>
-            <p className="text-sm text-[#7a7268] mb-4 line-clamp-3">
-              {service.description}
-            </p>
-            <p className="text-[#d6b26e] font-medium">
-              COP {service.price.toLocaleString('es-CO')}
-            </p>
+            <h3 className="font-heading text-lg">{service.title}</h3>
           </button>
         ))}
       </div>
@@ -34,10 +28,14 @@ function Services() {
       {selected && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-6"
+          style={{ perspective: '1000px' }}
           onClick={() => setSelected(null)}
         >
           <div
-            className="bg-[#fffdf9] rounded-2xl max-w-md sm:max-w-xl lg:max-w-2xl w-full p-8 sm:p-10 lg:p-12 text-left relative max-h-[90vh] overflow-y-auto"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="service-modal-title"
+            className="modal-flip-in bg-[#fffdf9] rounded-2xl max-w-md sm:max-w-xl lg:max-w-2xl w-full p-8 sm:p-10 lg:p-12 text-left relative max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -47,7 +45,9 @@ function Services() {
             >
               ✕
             </button>
-            <h3 className="font-heading text-2xl mb-2">{selected.title}</h3>
+            <h3 id="service-modal-title" className="font-heading text-2xl mb-2">
+              {selected.title}
+            </h3>
             {selected.duration && (
               <p className="text-sm text-[#7a7268] mb-1">
                 Duración: {selected.duration}
@@ -58,12 +58,23 @@ function Services() {
                 Modalidad: {selected.modality}
               </p>
             )}
-            <p className="text-[#3b342d] mb-4">{selected.description}</p>
+            {selected.description
+              .split(/\n\s*\n/)
+              .map((paragraph) => paragraph.trim())
+              .filter(Boolean)
+              .map((paragraph, i) => (
+                <p key={i} className="text-[#3b342d] mb-4">
+                  {paragraph}
+                </p>
+              ))}
             {selected.checklist && (
-              <ul className="mb-4 space-y-1">
+              <ul
+                className="mb-4 space-y-1"
+                style={{ fontFamily: 'var(--font-body)' }}
+              >
                 {selected.checklist.map((item) => (
-                  <li key={item} className="text-sm text-[#3b342d]">
-                    ✓ {item}
+                  <li key={item} className="text-[#7a7268]">
+                    {selected.icon ?? '✨'} {item}
                   </li>
                 ))}
               </ul>

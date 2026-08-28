@@ -6,6 +6,7 @@ export interface Service {
   duration?: string
   modality?: string
   checklist?: string[]
+  icon?: string
 }
 
 export interface Testimonial {

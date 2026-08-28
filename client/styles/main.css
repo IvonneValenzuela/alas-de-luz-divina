@@ -125,3 +125,22 @@ img {
   background: var(--color-primary);
   color: white;
 }
+
+/* ========================================
+   MODAL ANIMATIONS
+======================================== */
+
+@keyframes modal-flip-in {
+  from {
+    transform: rotateY(90deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+.modal-flip-in {
+  animation: modal-flip-in 0.4s ease-out;
+}
