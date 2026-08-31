@@ -14,7 +14,7 @@ export const benefits: Benefit[] = [
       text: 'Nuestro miedo más profundo no es que seamos inadecuados. Nuestro miedo más profundo es que somos poderosos sin límite. Es nuestra luz, no nuestra oscuridad lo que más nos asusta.',
       author: 'Marianne Williamson',
     },
-    image: '/images/claridadbg.png',
+    image: '/claridadbg.png',
   },
   {
     id: 'acompanamiento',
@@ -29,7 +29,7 @@ export const benefits: Benefit[] = [
       text: 'Lo que resistes persiste, lo que aceptas te transforma.',
       author: 'Carl Gustav Jung',
     },
-    image: '/images/acompanamientobg.png',
+    image: '/acompanamientobg.png',
   },
   {
     id: 'conexion',
@@ -44,7 +44,7 @@ export const benefits: Benefit[] = [
       text: 'La vida no es un problema que tiene que ser resuelto, sino una realidad que debe ser experimentada.',
       author: 'Søren Kierkegaard',
     },
-    image: '/images/conexionbg.png',
+    image: '/conexionbg.png',
   },
   {
     id: 'transformacion',
@@ -60,6 +60,6 @@ export const benefits: Benefit[] = [
       text: 'Quien mira hacia afuera, sueña; quien mira hacia adentro, despierta.',
       author: 'Carl Gustav Jung',
     },
-    image: '/images/transformacionbg.png',
+    image: '/transformacionbg.png',
   },
 ]
