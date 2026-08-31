@@ -14,3 +14,16 @@ export interface Testimonial {
   name: string
   quote: string
 }
+
+export interface Benefit {
+  id: string
+  order: number
+  title: string
+  subtitle: string
+  body: string[]
+  quote: {
+    text: string
+    author: string
+  }
+  image: string
+}
