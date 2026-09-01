@@ -49,12 +49,12 @@ See `/AGENTS.md` at the project root, it's the single source of truth for stack,
 - **Playwright setup** — Installed and configured, ready for test cases to be written.
 - **001 · About Paula content** — Built out the About Paula section with Paula's real bio, photo, and tagline.
 - **002 · Therapies list & popup redesign** — Added the missing therapies with updated pricing, and redesigned the popup as a flip card: the card shows only the therapy name, and flips to reveal full details on click.
+- **003 · Benefits content** — Built out the Benefits section with real content: a scroll-pinned reveal on desktop, and a tap-to-expand accordion on mobile.
 
 ### Next
 
 ### Backlog / Ideas
 
-- **003 · Benefits content**
 - **004 · Testimonials content**
 - **005 · Footer content**
 - **006 · Playwright test cases for existing sections** — Retroactively add end to end tests for Hero, Navigation, Story, and Services, since they were built before Playwright was set up.
