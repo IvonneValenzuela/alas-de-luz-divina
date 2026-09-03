@@ -55,10 +55,10 @@ See `/AGENTS.md` at the project root, it's the single source of truth for stack,
 
 ### Backlog / Ideas
 
-- **004 · Testimonials content**
-- **005 · Footer content**
-- **006 · Playwright test cases for existing sections** — Retroactively add end to end tests for Hero, Navigation, Story, and Services, since they were built before Playwright was set up.
-- **007 · FAQ content** — Add real frequently asked questions and answers to FAQ.tsx (cancellation timing is one likely question), once the specific questions and answers are defined. Currently an empty component shell with no content.
+- **004 · FAQ content** — Add real frequently asked questions and answers to FAQ.tsx (cancellation timing is one likely question), once the specific questions and answers are defined. Currently an empty component shell with no content.
+- **005 · Testimonials content**
+- **006 · Footer content**
+- **007 · Playwright test cases for existing sections** — Retroactively add end to end tests for Hero, Navigation, Story, and Services, since they were built before Playwright was set up.
 - **Hero background** — Update the current background image.
 - Mobile navigation improvements.
 - Subtle scroll and interaction animations.
