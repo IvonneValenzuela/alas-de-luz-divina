@@ -10,6 +10,13 @@ export class HomePage {
   readonly serviceModalOverlay: Locator
   readonly closeServiceModalButton: Locator
   readonly whatsappBookingLink: Locator
+  readonly faqSection: Locator
+  readonly faqQuestionButtons: Locator
+  readonly faqAccordionContainer: Locator
+  readonly faqCommunityLink: Locator
+  readonly faqCtaHeading: Locator
+  readonly faqCtaButton: Locator
+  readonly faqCtaIcon: Locator
 
   constructor(page: Page) {
     this.page = page
@@ -25,6 +32,19 @@ export class HomePage {
     this.whatsappBookingLink = this.serviceModal.getByRole('link', {
       name: 'Agendar por WhatsApp',
     })
+    this.faqSection = page.locator('#faq')
+    this.faqQuestionButtons = this.faqSection.getByRole('button')
+    this.faqAccordionContainer = this.faqSection.locator('.divide-y')
+    this.faqCommunityLink = this.faqSection.getByRole('link', {
+      name: 'Unirme a la comunidad 🤍',
+    })
+    this.faqCtaHeading = this.faqSection.getByRole('heading', {
+      name: '¿Sientes el llamado a conectar contigo?',
+    })
+    this.faqCtaButton = this.faqSection.getByRole('link', {
+      name: 'Quiero abrirme a mi proceso',
+    })
+    this.faqCtaIcon = this.faqSection.locator('img[src="/favicon.png"]')
   }
 
   async open(): Promise<void> {
@@ -36,10 +56,21 @@ export class HomePage {
   }
 
   serviceCard(title: string): Locator {
-    return this.servicesSection.getByRole('button', { name: title, exact: true })
+    return this.servicesSection.getByRole('button', {
+      name: title,
+      exact: true,
+    })
   }
 
   async openServiceModal(title: string): Promise<void> {
     await this.serviceCard(title).click()
+  }
+
+  faqQuestionButton(question: string): Locator {
+    return this.faqSection.getByRole('button', { name: question })
+  }
+
+  async openFaqQuestion(question: string): Promise<void> {
+    await this.faqQuestionButton(question).click()
   }
 }

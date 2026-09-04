@@ -50,12 +50,12 @@ See `/AGENTS.md` at the project root, it's the single source of truth for stack,
 - **001 · About Paula content** — Built out the About Paula section with Paula's real bio, photo, and tagline.
 - **002 · Therapies list & popup redesign** — Added the missing therapies with updated pricing, and redesigned the popup as a flip card: the card shows only the therapy name, and flips to reveal full details on click.
 - **003 · Benefits content** — Built out the Benefits section with real content: a scroll-pinned reveal on desktop, and a tap-to-expand accordion on mobile.
+- **004 · FAQ content** — Built out the FAQ section with the twelve real questions and answers as a single-open accordion, plus a closing WhatsApp CTA.
 
 ### Next
 
 ### Backlog / Ideas
 
-- **004 · FAQ content** — Add real frequently asked questions and answers to FAQ.tsx (cancellation timing is one likely question), once the specific questions and answers are defined. Currently an empty component shell with no content.
 - **005 · Testimonials content**
 - **006 · Footer content**
 - **007 · Playwright test cases for existing sections** — Retroactively add end to end tests for Hero, Navigation, Story, and Services, since they were built before Playwright was set up.
