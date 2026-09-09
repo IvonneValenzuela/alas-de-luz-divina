@@ -24,6 +24,10 @@
   /* Tagline accent */
   --color-tagline: #e3965f;
 
+  /* Footer-only accents */
+  --color-footer-text: #fffdf8;
+  --color-footer-icon: #2e2620;
+
   /* Fonts */
   --font-heading: 'Cormorant Garamond', serif;
   --font-body: 'Inter', sans-serif;
