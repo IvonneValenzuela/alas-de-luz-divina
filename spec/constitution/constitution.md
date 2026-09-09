@@ -51,14 +51,14 @@ See `/AGENTS.md` at the project root, it's the single source of truth for stack,
 - **002 · Therapies list & popup redesign** — Added the missing therapies with updated pricing, and redesigned the popup as a flip card: the card shows only the therapy name, and flips to reveal full details on click.
 - **003 · Benefits content** — Built out the Benefits section with real content: a scroll-pinned reveal on desktop, and a tap-to-expand accordion on mobile.
 - **004 · FAQ content** — Built out the FAQ section with the twelve real questions and answers as a single-open accordion, plus a closing WhatsApp CTA.
+- **005 · Footer content** — Built out the Footer section with a pill-shaped bar, copyright text, and Instagram/TikTok badges linking to the same profiles used in the Hero.
 
 ### Next
 
 ### Backlog / Ideas
 
-- **006 · Footer content**
-- **007 · Playwright test cases for existing sections** — Retroactively add end to end tests for Hero, Navigation, Story, and Services, since they were built before Playwright was set up.
-- **008 · Testimonials content** - It will be implemented once Paula gets permission from customers to post the testimonials. Feature currently on pause.
+- **006 · Playwright test cases for existing sections** — Retroactively add end to end tests for Hero, Navigation, Story, and Services, since they were built before Playwright was set up.
+- **007 · Testimonials content** - It will be implemented once Paula gets permission from customers to post the testimonials. Feature currently on pause.
 - **Hero background** — Update the current background image.
 - Mobile navigation improvements.
 - Subtle scroll and interaction animations.

@@ -17,6 +17,9 @@ export class HomePage {
   readonly faqCtaHeading: Locator
   readonly faqCtaButton: Locator
   readonly faqCtaIcon: Locator
+  readonly footerSection: Locator
+  readonly footerInstagramLink: Locator
+  readonly footerTiktokLink: Locator
 
   constructor(page: Page) {
     this.page = page
@@ -45,6 +48,13 @@ export class HomePage {
       name: 'Quiero abrirme a mi proceso',
     })
     this.faqCtaIcon = this.faqSection.locator('img[src="/favicon.png"]')
+    this.footerSection = page.locator('#footer')
+    this.footerInstagramLink = this.footerSection.getByRole('link', {
+      name: 'Instagram',
+    })
+    this.footerTiktokLink = this.footerSection.getByRole('link', {
+      name: 'TikTok',
+    })
   }
 
   async open(): Promise<void> {

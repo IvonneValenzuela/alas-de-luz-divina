@@ -5,6 +5,7 @@ import Services from './components/Services'
 import Benefits from './components/Benefits'
 import AboutPaula from './components/AboutPaula'
 import FAQ from './components/FAQ'
+import Footer from './components/Footer'
 function App() {
   return (
     <>
@@ -15,6 +16,7 @@ function App() {
       <Benefits />
       <AboutPaula />
       <FAQ />
+      <Footer />
     </>
   )
 }
