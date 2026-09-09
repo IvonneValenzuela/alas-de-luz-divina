@@ -56,9 +56,9 @@ See `/AGENTS.md` at the project root, it's the single source of truth for stack,
 
 ### Backlog / Ideas
 
-- **005 · Testimonials content**
 - **006 · Footer content**
 - **007 · Playwright test cases for existing sections** — Retroactively add end to end tests for Hero, Navigation, Story, and Services, since they were built before Playwright was set up.
+- **008 · Testimonials content** - It will be implemented once Paula gets permission from customers to post the testimonials. Feature currently on pause.
 - **Hero background** — Update the current background image.
 - Mobile navigation improvements.
 - Subtle scroll and interaction animations.

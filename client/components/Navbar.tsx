@@ -9,7 +9,7 @@ function Navbar() {
     { id: 'services', label: 'Terapias' },
     { id: 'benefits', label: 'Beneficios' },
     { id: 'about-paula', label: 'Sobre Paula' },
-    { id: 'testimonials', label: 'Testimonios' },
+    //{ id: 'testimonials', label: 'Testimonios' }, - This feature is currently on pause.
     { id: 'faq', label: 'Preguntas' },
   ]
 
