@@ -16,7 +16,7 @@ function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-[#faf7f2]/90 backdrop-blur">
       <div className="flex items-center justify-between px-6 lg:px-16 py-4">
-        <img src="/favicon.png" alt="Alas de Luz Divina" className="h-12" />
+        <img src="/favicon.png" alt="favicon" className="h-12" />
 
         <div className="hidden lg:flex gap-3">
           {links.map((link) => (

@@ -20,7 +20,7 @@ function FAQ() {
                 aria-expanded={isOpen}
               >
                 <h3 className="font-heading text-lg">{item.question}</h3>
-                <span className="text-[#d6b26e] text-xl leading-none shrink-0">
+                <span className="text-[#94691a] text-xl leading-none shrink-0">
                   {isOpen ? '−' : '+'}
                 </span>
               </button>
@@ -56,8 +56,8 @@ function FAQ() {
             ¿Sientes el llamado a conectar contigo?
           </h3>
           <p className="text-[#7a7268]">
-            Este puede ser el momento de escucharte y dar ese primer paso
-            hacia tu proceso.
+            Este puede ser el momento de escucharte y dar ese primer paso hacia
+            tu proceso.
           </p>
         </div>
         <a

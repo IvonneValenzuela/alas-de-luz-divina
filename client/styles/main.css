@@ -8,6 +8,7 @@
   /* Brand Colors */
   --color-primary: #d6b26e;
   --color-primary-light: #ead6ad;
+  --color-primary-dark: #94691a;
   --color-secondary: #d9c8d9;
 
   /* Backgrounds */
@@ -22,7 +23,7 @@
   --color-border: #ebe2d7;
 
   /* Tagline accent */
-  --color-tagline: #e3965f;
+  --color-tagline: #996f13;
 
   /* Footer-only accents */
   --color-footer-text: #fffdf8;
@@ -101,13 +102,14 @@ img {
   justify-content: center;
   padding: 0.85rem 2rem;
   border-radius: var(--radius-full);
-  background: var(--color-primary);
+  background: var(--color-primary-dark);
   color: white;
   font-weight: 500;
   transition: var(--transition-default);
 }
 
 .button-primary:hover {
+  background: #956a2f;
   transform: translateY(-2px);
 }
 
