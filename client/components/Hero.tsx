@@ -4,7 +4,7 @@ function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center px-6"
+      className="min-h-screen flex items-center justify-center px-6 pt-28 pb-12 lg:pt-0 lg:pb-0"
     >
       <div className="max-w-3xl mx-auto flex flex-col items-center gap-8 text-center">
         <img src="/logo.png" alt="oficiallogo" className="w-[400px]" />
