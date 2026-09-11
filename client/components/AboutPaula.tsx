@@ -30,7 +30,9 @@ function AboutPaula() {
         </div>
 
         <div className="text-left max-w-prose">
-          <h2 className="text-4xl mb-3">Un poco más de mí</h2>
+          <h2 className="text-4xl mb-3 text-center md:text-left">
+            Un poco más de mí
+          </h2>
 
           <div className="space-y-3 text-[#7a7268] leading-relaxed text-center md:text-left">
             {paulaBio.map((paragraph, index) => (
