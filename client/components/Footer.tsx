@@ -3,7 +3,7 @@ import { SiInstagram, SiTiktok, SiWhatsapp } from 'react-icons/si'
 function Footer() {
   return (
     <footer id="footer" className="px-3 py-12 sm:px-6">
-      <div className="max-w-5xl mx-auto flex items-center justify-between gap-2 rounded-full bg-[#94691a] px-3 py-2 sm:gap-3 sm:px-8 sm:py-4">
+      <div className="max-w-5xl mx-auto flex flex-col items-center justify-center gap-2 rounded-full bg-[#94691a] px-3 py-3 sm:flex-row sm:justify-between sm:gap-3 sm:px-8 sm:py-4">
         <p
           className="whitespace-nowrap text-[9.5px] sm:text-sm"
           style={{ color: 'var(--color-footer-text)' }}
