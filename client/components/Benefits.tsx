@@ -21,9 +21,11 @@ const sectionGradient =
 function BenefitCard({
   benefit,
   className = '',
+  showTitle = true,
 }: {
   benefit: Benefit
   className?: string
+  showTitle?: boolean
 }) {
   return (
     <div
@@ -32,7 +34,9 @@ function BenefitCard({
     >
       <div className="absolute inset-0 bg-white/60 pointer-events-none" />
       <div className="relative">
-        <h3 className="font-heading text-2xl mb-2">{benefit.title}</h3>
+        {showTitle && (
+          <h3 className="font-heading text-2xl mb-2">{benefit.title}</h3>
+        )}
         <p className="text-[#7a7268] mb-6">{benefit.subtitle}</p>
 
         <div className="space-y-4 mb-6">
@@ -205,7 +209,7 @@ function MobileAccordion() {
 
             {isOpen && (
               <div className="text-center">
-                <BenefitCard benefit={benefit} />
+                <BenefitCard benefit={benefit} showTitle={false} />
               </div>
             )}
           </div>
