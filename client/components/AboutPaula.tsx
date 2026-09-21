@@ -13,7 +13,7 @@ function AboutPaula() {
           <img
             src="/pau.png"
             alt="Pau"
-            className="w-56 sm:w-64 md:w-[600px] rounded-2xl"
+            className="w-56 sm:w-64 md:w-[280px] lg:w-[600px] rounded-2xl"
           />
 
           <div
