@@ -27,3 +27,10 @@ export interface Benefit {
   }
   image: string
 }
+
+export interface StoryContent {
+  title: string
+  quote: string
+  paragraphs: string[]
+  closing: string
+}

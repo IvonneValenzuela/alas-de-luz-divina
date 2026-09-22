@@ -1,10 +1,9 @@
 import { test, expect } from '@playwright/test'
 import { HomePage } from './pages/HomePage'
+import { socialLinks } from '../client/data/social-links'
 
 const COPYRIGHT_TEXT =
   '© 2026 Alas de Luz Divina. Todos los derechos reservados.'
-const INSTAGRAM_URL = 'https://instagram.com/alasdeluzdivina'
-const TIKTOK_URL = 'https://www.tiktok.com/@alas.de.luz.divina'
 
 let home: HomePage
 
@@ -24,12 +23,18 @@ test('renders exactly two social badges, Instagram and TikTok', async () => {
 })
 
 test('Instagram badge links to the correct profile and opens in a new tab', async () => {
-  await expect(home.footerInstagramLink).toHaveAttribute('href', INSTAGRAM_URL)
+  await expect(home.footerInstagramLink).toHaveAttribute(
+    'href',
+    socialLinks.instagram,
+  )
   await expect(home.footerInstagramLink).toHaveAttribute('target', '_blank')
 })
 
 test('TikTok badge links to the correct profile and opens in a new tab', async () => {
-  await expect(home.footerTiktokLink).toHaveAttribute('href', TIKTOK_URL)
+  await expect(home.footerTiktokLink).toHaveAttribute(
+    'href',
+    socialLinks.tiktok,
+  )
   await expect(home.footerTiktokLink).toHaveAttribute('target', '_blank')
 })
 

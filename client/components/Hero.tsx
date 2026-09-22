@@ -1,4 +1,5 @@
 import { SiInstagram, SiTiktok } from 'react-icons/si'
+import { socialLinks } from '../data/social-links'
 
 function Hero() {
   return (
@@ -19,7 +20,7 @@ function Hero() {
         </p>
 
         <a
-          href="https://wa.me/573019095778"
+          href={socialLinks.whatsapp}
           target="_blank"
           rel="noopener noreferrer"
           className="button-primary inline-flex px-8 py-3 rounded-full"
@@ -29,7 +30,7 @@ function Hero() {
 
         <div className="flex justify-center gap-4">
           <a
-            href="https://instagram.com/alasdeluzdivina"
+            href={socialLinks.instagram}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
@@ -39,7 +40,7 @@ function Hero() {
           </a>
 
           <a
-            href="https://www.tiktok.com/@alas.de.luz.divina"
+            href={socialLinks.tiktok}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="TikTok"
