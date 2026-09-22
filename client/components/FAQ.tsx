@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { faqItems } from '../data/faq'
+import { socialLinks } from '../data/social-links'
 
 function FAQ() {
   const [openId, setOpenId] = useState<string | null>(null)
@@ -61,7 +62,7 @@ function FAQ() {
           </p>
         </div>
         <a
-          href="https://wa.me/573019095778"
+          href={socialLinks.whatsapp}
           target="_blank"
           rel="noopener noreferrer"
           className="button-primary inline-flex px-6 py-3 rounded-full whitespace-nowrap"

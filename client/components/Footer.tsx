@@ -1,4 +1,5 @@
 import { SiInstagram, SiTiktok, SiWhatsapp } from 'react-icons/si'
+import { socialLinks } from '../data/social-links'
 
 function Footer() {
   return (
@@ -13,7 +14,7 @@ function Footer() {
 
         <div className="flex items-center gap-1.5 shrink-0 sm:gap-3">
           <a
-            href="https://instagram.com/alasdeluzdivina"
+            href={socialLinks.instagram}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
@@ -24,7 +25,7 @@ function Footer() {
           </a>
 
           <a
-            href="https://wa.me/573019095778"
+            href={socialLinks.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="WhatsApp"
@@ -35,7 +36,7 @@ function Footer() {
           </a>
 
           <a
-            href="https://www.tiktok.com/@alas.de.luz.divina"
+            href={socialLinks.tiktok}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="TikTok"

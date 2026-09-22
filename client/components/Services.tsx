@@ -1,9 +1,23 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { services } from '../data/services'
 import type { Service } from '../data/types'
+import { socialLinks } from '../data/social-links'
 
 function Services() {
   const [selected, setSelected] = useState<Service | null>(null)
+
+  useEffect(() => {
+    if (!selected) return
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setSelected(null)
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [selected])
 
   return (
     <section id="services" className="py-20 px-6 max-w-5xl mx-auto text-center">
@@ -84,7 +98,7 @@ function Services() {
             </p>
 
             <a
-              href="https://wa.me/573019095778"
+              href={socialLinks.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
               className="button-primary inline-flex px-6 py-3 rounded-full"

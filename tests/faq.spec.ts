@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test'
 import { HomePage } from './pages/HomePage'
 import { faqItems } from '../client/data/faq'
+import { socialLinks } from '../client/data/social-links'
 
 const [firstItem, secondItem] = faqItems
 const seventhItem = faqItems[6] // question 7
@@ -82,7 +83,7 @@ test('closing CTA renders the wings icon, headline, supporting line, and WhatsAp
   await expect(home.faqCtaButton).toHaveClass(/button-primary/)
   await expect(home.faqCtaButton).toHaveAttribute(
     'href',
-    'https://wa.me/573019095778',
+    socialLinks.whatsapp,
   )
   await expect(home.faqCtaButton).toHaveAttribute('target', '_blank')
 })
