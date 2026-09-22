@@ -26,7 +26,7 @@ The About Paula section displays Paula's real biography exactly as she wrote it,
 
 ## Content
 
-Paula's bio, condensed to 4 paragraphs and confirmed directly with her (the original 12-paragraph draft was shortened, then approved by Paula as the final version). Saved as `client/data/about.ts` (`paulaBio`), source of truth. Do not alter, paraphrase, reorder, or reformat it there
+Paula's bio, condensed to 6 paragraphs and confirmed directly with her (the original 12-paragraph draft was shortened, then approved by Paula as the final version). Saved as `client/data/about.ts` (`paulaBio`), source of truth. Do not alter, paraphrase, reorder, or reformat it there
 
 ## Out of scope
 
