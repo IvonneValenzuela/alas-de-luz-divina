@@ -8,6 +8,7 @@ export class HomePage {
   readonly serviceModal: Locator
   readonly whatsappBookingLink: Locator
   readonly footerSection: Locator
+  readonly aboutPaulaSection: Locator
 
   constructor(page: Page) {
     this.page = page
@@ -19,6 +20,7 @@ export class HomePage {
       name: 'Agendar por WhatsApp',
     })
     this.footerSection = page.locator('#footer')
+    this.aboutPaulaSection = page.locator('#about-paula')
   }
 
   navLink(name: string): Locator {
@@ -31,6 +33,21 @@ export class HomePage {
 
   async scrollToBottom() {
     await this.page.evaluate(() => window.scrollTo(0, document.body.scrollHeight))
+  }
+
+  async waitForFontsAndImages() {
+    await this.page.evaluate(async () => {
+      await document.fonts.ready
+      await Promise.all(
+        Array.from(document.images).map((img) => img.decode().catch(() => {})),
+      )
+    })
+  }
+
+  // The navbar is position: fixed, so in a stitched full-section screenshot it
+  // lands on top of whatever content is under it, hide it instead of masking.
+  async hideNavbar() {
+    await this.page.addStyleTag({ content: 'nav { visibility: hidden !important; }' })
   }
 
   async open() {
