@@ -9,6 +9,8 @@ export class HomePage {
   readonly whatsappBookingLink: Locator
   readonly footerSection: Locator
   readonly aboutPaulaSection: Locator
+  readonly benefitsSection: Locator
+  readonly sectionAfterBenefits: Locator
 
   constructor(page: Page) {
     this.page = page
@@ -21,6 +23,14 @@ export class HomePage {
     })
     this.footerSection = page.locator('#footer')
     this.aboutPaulaSection = page.locator('#about-paula')
+    this.benefitsSection = page.locator('#benefits')
+    // Whatever sibling App.tsx renders right after Benefits, so a section
+    // reorder doesn't break the tests that rely on it.
+    this.sectionAfterBenefits = page.locator('#benefits + *')
+  }
+
+  benefitText(text: string): Locator {
+    return this.benefitsSection.getByText(text)
   }
 
   navLink(name: string): Locator {
@@ -31,8 +41,25 @@ export class HomePage {
     return this.page.locator(`#${id}`)
   }
 
+  // Scrolls so the pinned Benefits wrapper (the section's first child) sits at
+  // the given scroll progress (0–1), the same value Benefits.tsx derives from
+  // getBoundingClientRect. Instant, to bypass the global smooth scroll.
+  async scrollBenefitsToProgress(progress: number) {
+    const wrapper = this.benefitsSection.locator(':scope > div').first()
+    await wrapper.evaluate((wrapper: HTMLElement, progress) => {
+      const wrapperTop = wrapper.getBoundingClientRect().top + window.scrollY
+      const scrollable = wrapper.offsetHeight - window.innerHeight
+      window.scrollTo({
+        top: wrapperTop + progress * scrollable,
+        behavior: 'instant',
+      })
+    }, progress)
+  }
+
   async scrollToBottom() {
-    await this.page.evaluate(() => window.scrollTo(0, document.body.scrollHeight))
+    await this.page.evaluate(() =>
+      window.scrollTo(0, document.body.scrollHeight),
+    )
   }
 
   async waitForFontsAndImages() {
@@ -45,9 +72,11 @@ export class HomePage {
   }
 
   // The navbar is position: fixed, so in a stitched full-section screenshot it
-  // lands on top of whatever content is under it, hide it instead of masking.
+  // lands on top of whatever content is under it. Hide it instead of masking.
   async hideNavbar() {
-    await this.page.addStyleTag({ content: 'nav { visibility: hidden !important; }' })
+    await this.page.addStyleTag({
+      content: 'nav { visibility: hidden !important; }',
+    })
   }
 
   async open() {
