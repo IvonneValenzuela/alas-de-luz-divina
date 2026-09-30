@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { faqItems } from '../data/faq'
+import { faqItems, faqInvitation } from '../data/faq'
 import { socialLinks } from '../data/social-links'
 
 function FAQ() {
@@ -54,12 +54,9 @@ function FAQ() {
         <img src="/favicon.png" alt="" className="h-16 shrink-0" />
         <div className="text-center md:text-left">
           <h3 className="font-heading text-2xl mb-2">
-            ¿Sientes el llamado a conectar contigo?
+            {faqInvitation.headline}
           </h3>
-          <p className="text-[#7a7268]">
-            Este puede ser el momento de escucharte y dar ese primer paso hacia
-            tu proceso.
-          </p>
+          <p className="text-[#7a7268]">{faqInvitation.text}</p>
         </div>
         <a
           href={socialLinks.whatsapp}
@@ -67,7 +64,7 @@ function FAQ() {
           rel="noopener noreferrer"
           className="button-primary inline-flex px-6 py-3 rounded-full whitespace-nowrap"
         >
-          Quiero abrirme a mi proceso
+          {faqInvitation.buttonLabel}
         </a>
       </div>
     </section>

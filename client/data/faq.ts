@@ -123,3 +123,9 @@ export const faqItems: FaqItem[] = [
     ],
   },
 ]
+
+export const faqInvitation = {
+  headline: '¿Sientes el llamado a conectar contigo?',
+  text: 'Este puede ser el momento de escucharte y dar ese primer paso hacia tu proceso.',
+  buttonLabel: 'Quiero abrirme a mi proceso',
+}
