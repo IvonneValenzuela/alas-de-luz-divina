@@ -8,8 +8,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  component-tests:
-    name: Vitest
+  vitest:
+    name: Unit & Component (Vitest)
     timeout-minutes: 10
     runs-on: ubuntu-latest
     steps:
@@ -26,9 +26,9 @@ jobs:
       - name: Run Vitest
         run: npm test
 
-  test:
-    name: Playwright Tests
-    needs: component-tests
+  e2e:
+    name: E2E (Playwright)
+    needs: vitest
     timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
@@ -43,7 +43,7 @@ jobs:
         run: npm ci
 
       - name: Install Playwright browsers
-        run: npx playwright install --with-deps
+        run: npx playwright install --with-deps chromium
 
       - name: Run Playwright tests
         run: npx playwright test
@@ -55,6 +55,7 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
+
       - name: Upload Playwright test results (traces, videos, etc.)
         if: always()
         uses: actions/upload-artifact@v4
