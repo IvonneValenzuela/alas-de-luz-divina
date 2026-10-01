@@ -11,6 +11,7 @@ export class HomePage {
   readonly aboutPaulaSection: Locator
   readonly benefitsSection: Locator
   readonly sectionAfterBenefits: Locator
+  readonly faqSection: Locator
 
   constructor(page: Page) {
     this.page = page
@@ -27,6 +28,7 @@ export class HomePage {
     // Whatever sibling App.tsx renders right after Benefits, so a section
     // reorder doesn't break the tests that rely on it.
     this.sectionAfterBenefits = page.locator('#benefits + *')
+    this.faqSection = page.locator('#faq')
   }
 
   benefitText(text: string): Locator {
