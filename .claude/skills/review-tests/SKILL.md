@@ -15,9 +15,9 @@ A read-only audit that catches drift between what a feature's tests assert and w
 
 ## Step 1 — Read the acceptance criteria
 
-Read the named feature's `spec.md` acceptance criteria list in full. Then look for a confirmed `test-plan.md` in the same feature folder. If it exists, read it in full too, especially its test case IDs, its Left out section, and any case marked for manual QA: it records the user's own decisions about what gets automated, at which level, and what doesn't. If it doesn't exist (features tested before this workflow), say so in the report and audit against `spec.md` alone.
+Read the named feature's `spec.md` acceptance criteria list in full. Then look for this feature's section in the confirmed test plan at the path this project's `AGENTS.md` documents (eg `tests/test-plan/test-plan.md`, one section per feature, headed with the feature's folder name). If it exists, read that section in full too, especially its test case IDs, its Left out section, and any case marked for manual QA: it records the user's own decisions about what gets automated, at which level, and what doesn't. If it doesn't exist (features tested before this workflow), say so in the report and audit against `spec.md` alone.
 
-If the user points to a shared test case document covering several components instead of a per-feature file, treat only this feature's section of it as its test-plan.md, and leave every other section untouched. If it's unclear which section belongs to this feature, ask rather than guessing.
+If the user points to a different test case document instead, treat only this feature's section of it as its test plan, and leave every other section untouched. If it's unclear which section belongs to this feature, ask rather than guessing.
 
 ## Step 2 — Read the tests
 

@@ -18,7 +18,7 @@ Turn an already-classified list of test cases into working, running test code, w
 
 ## Step 1 — Get the classified test cases
 
-Get the list of cases to write, from whichever source the user provides: a confirmed `test-plan.md` (find and read it at the feature's spec path, e.g. `spec/features/NNN-<feature-name>/test-plan.md`, or wherever the user points), or a list pasted or attached directly in the conversation, a table, a set of bullet points, anything, as long as it already states each case's Automation level. If nothing is provided and nothing can be found, stop and ask for it, don't invent test cases from scratch, that's not this skill's job.
+Get the list of cases to write, from whichever source the user provides: a confirmed `test-plan.md` (find and read it at the test file, or wherever the user points), or a list pasted or attached directly in the conversation, a table, a set of bullet points, anything, as long as it already states each case's Automation level. If nothing is provided and nothing can be found, stop and ask for it, don't invent test cases from scratch, that's not this skill's job.
 
 Take each case's Automation level exactly as given, regardless of source. If something looks genuinely wrong once you see the real implementation (for instance, the list expected two components but they turned out to already be merged into one), flag that to the user rather than silently reclassifying, the list is the source of truth, not this skill's judgment.
 

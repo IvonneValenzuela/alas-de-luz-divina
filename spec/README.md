@@ -13,11 +13,8 @@ spec/
     └── NNN-feature-name/
         ├── spec.md       ← what it does + acceptance criteria
         ├── plan.md       ← how it gets implemented
-        ├── tasks.md      ← implementation task checklist
-        └── test-plan.md  ← confirmed test cases, chosen by the developer
+        └── tasks.md      ← implementation task checklist
 ```
-
-Test cases written before the per-feature `test-plan.md` convention, covering the sections that already existed (Navbar, Hero, Services, Footer and others), live in `tests/<nombre-del-archivo>.md`.
 
 ## Workflow for a new feature
 
@@ -28,7 +25,7 @@ Test cases written before the per-feature `test-plan.md` convention, covering th
 | 3 | `/implement-task <feature> execute` | Implements exactly one task per run, applying the project's code quality checks. Never checks boxes in `tasks.md`. |
 | 4 | `/verify-tasks <feature>` | Reconciles `tasks.md` against real evidence (code, git, lint, build) and checks off what is genuinely done. Covers implementation only, tests are not tasks. |
 | 5 | `/analyze-test-cases <feature>` | Proposes test cases from the acceptance criteria, classified by ISTQB test type and by automation level (Unit, Component, E2E) using the testing pyramid, with ambiguities and a traceability matrix. Writes no files and no code. |
-| 6 | Developer | Decides which cases to keep and writes them into `test-plan.md`. |
+| 6 | Developer | Decides which cases to keep and writes them into that feature's section of `/tests/test-plan/<documentname>.md`. |
 | 7 | `/write-tests <feature>` | Turns `test-plan.md` into code (Playwright for E2E, Vitest + React Testing Library for Unit/Component) and runs only this feature's files. Fixes test bugs, reports app bugs without touching application code. |
 | 8 | `/review-tests <feature>` | Read-only audit of the feature's tests against `spec.md` and `test-plan.md`: coverage, planned cases not written, data drift, Page Object Model discipline. Anything it flags gets fixed before closing. |
 | 9 | `/close-feature <feature>` | Marks the spec's acceptance criteria and Status as done with evidence, and moves the feature to "Done" in `constitution.md`. |
