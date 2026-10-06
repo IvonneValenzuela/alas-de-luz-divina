@@ -26,8 +26,8 @@ spec/
 | 4 | `/verify-tasks <feature>` | Reconciles `tasks.md` against real evidence (code, git, lint, build) and checks off what is genuinely done. Covers implementation only, tests are not tasks. |
 | 5 | `/analyze-test-cases <feature>` | Proposes test cases from the acceptance criteria, classified by ISTQB test type and by automation level (Unit, Component, E2E) using the testing pyramid, with ambiguities and a traceability matrix. Writes no files and no code. |
 | 6 | Developer | Decides which cases to keep and writes them into that feature's section of `/tests/test-plan/final-test-cases.md`. |
-| 7 | `/write-tests <feature>` | Turns `test-plan.md` into code (Playwright for E2E, Vitest + React Testing Library for Unit/Component) and runs only this feature's files. Fixes test bugs, reports app bugs without touching application code. |
-| 8 | `/review-tests <feature>` | Read-only audit of the feature's tests against `spec.md` and `test-plan.md`: coverage, planned cases not written, data drift, Page Object Model discipline. Anything it flags gets fixed before closing. |
+| 7 | `/write-tests <feature>` | Turns the test plan located in `test/test-plan/` into code (Playwright for E2E, Vitest + React Testing Library for Unit/Component) and runs only this feature's files. Fixes test bugs, reports app bugs without touching application code. |
+| 8 | `/review-tests <feature>` | Read-only audit of the feature's tests against `spec.md` and the file which contains the test cases located in `test/test-plan/`: coverage, planned cases not written, data drift, Page Object Model discipline. Anything it flags gets fixed before closing. |
 | 9 | `/close-feature <feature>` | Marks the spec's acceptance criteria and Status as done with evidence, and moves the feature to "Done" in `constitution.md`. |
 | 10 | `/fill-pr` | Fills the pull request template from the diff and opens the PR after approval. The developer commits and pushes. |
 
@@ -37,6 +37,6 @@ The agent never decides alone at these points: the developer writes and approves
 
 ## Evolution
 
-Tests were originally designed and written by a single skill, `plan-tests`, which only produced Playwright tests and pushed almost every case to E2E. It was retired and split into `analyze-test-cases` and `write-tests`, with the developer's decision in `test-plan.md` in between, so each case lands at the cheapest automation level that verifies it. Earlier features were tested under the previous flow.
+Tests were originally designed and written by a single skill, `plan-tests`, which only produced Playwright tests and pushed almost every case to E2E. It was retired and split into `analyze-test-cases` and `write-tests`, with the developer's decision located in `test/test-plan/` in between, so each case lands at the cheapest automation level that verifies it. Earlier features were tested under the previous flow.
 
 > The constitution rules. If a feature conflicts with the mission or with `/AGENTS.md`, the feature gets rethought, not the constitution.
