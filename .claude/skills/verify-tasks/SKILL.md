@@ -1,6 +1,6 @@
 ---
 name: verify-tasks
-description: Reconcile a feature's tasks.md against what was genuinely implemented this session — check off completed tasks, log unplanned work, flag stale checkmarks. Never runs the Playwright suite itself, relies on plan-tests' last recorded result instead. Use before committing a finished feature in a spec/features/NNN-name/ structure.
+description: Reconcile a feature's tasks.md against what was genuinely implemented this session — check off completed tasks, log unplanned work, flag stale checkmarks. Never runs Playwright itself, relies on write-tests' last reported result instead. Use before committing a finished feature in a spec/features/NNN-name/ structure.
 ---
 
 # Verify tasks
@@ -21,9 +21,12 @@ the code.
   acceptance criteria as done," verify whether that actually happened and
   report it; don't do it yourself as a side effect of this skill.
 - Never runs `npx playwright test`, not even scoped to one file (see Step 3).
-  This environment is memory-constrained and a fresh Playwright run has
-  crashed the session more than once. `plan-tests` owns running Playwright,
-  scoped safely and with its own crash handling, per `/AGENTS.md`.
+  Running tests is `write-tests`' job, which keeps verifying and executing
+  as separate responsibilities. It also avoids extra browser runs in this
+  memory-limited WSL environment, which crashed in earlier sessions before
+  Playwright was set to one worker on chromium only. `write-tests` owns
+  running this feature's tests (Playwright on chromium only, Vitest scoped
+  to the feature's files), with its own crash handling, per `/AGENTS.md`.
 
 ## Step 1 — Identify the target feature
 
@@ -53,11 +56,13 @@ Verify against artifacts that actually exist:
   content matches what a task describes, not just that a file with the right
   name exists.
 - If a task's completion hinges on a command passing (`npm run lint`,
-  `npm run build`, etc.) and it's safe/cheap to run, run it rather than
-  assuming. Never run `npx playwright test` yourself, that's `plan-tests`'
-  job (see Scope). Treat `plan-tests`' last recorded result as evidence for
-  a test-related task instead, or ask the user to confirm tests currently
-  pass if you genuinely need that confirmation and no recent result exists.
+  `npm run build`, `npm test`, etc.) and it's safe/cheap to run, run it
+  rather than assuming. Vitest (`npm test`) counts as safe here, it uses
+  jsdom, not a browser. Never run `npx playwright test` yourself, that's
+  `write-tests`' job (see Scope). Treat `write-tests`' last reported result
+  in this session as evidence for a Playwright-related task instead, or ask
+  the user to confirm tests currently pass if you genuinely need that
+  confirmation and no recent result exists.
 
 ## Step 4 — Reconcile each existing task line
 
