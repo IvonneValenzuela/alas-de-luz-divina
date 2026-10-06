@@ -30,7 +30,7 @@ If anything needed to write an accurate plan or task list isn't at least 80% cle
 
 ## Step 5 — Write plan.md and tasks.md
 
-Write both files. `tasks.md` must end with a task line covering closing work (marking `spec.md`'s acceptance criteria done and moving the feature to "Done" in `constitution.md`), so `close-feature` can later find and check it off. Include a task line for the Playwright test file, per `AGENTS.md`'s testing convention.
+Write both files. `tasks.md` must end with a task line covering closing work (marking `spec.md`'s acceptance criteria done and moving the feature to "Done" in `constitution.md`), so `close-feature` can later find and check it off.
 
 ## Step 6 — Stop and wait
 
