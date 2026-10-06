@@ -1,6 +1,6 @@
 ---
 name: close-feature
-description: Close out a finished feature — mark spec.md's acceptance criteria and Status as done with real evidence, and move the feature's line to "Done" in the constitution roadmap. Never runs the Playwright suite itself, relies on plan-tests'/verify-tasks' evidence instead. Run after verify-tasks confirms tasks.md is fully checked with no open discrepancies.
+description: Close out a finished feature — mark spec.md's acceptance criteria and Status as done with real evidence, and move the feature's line to "Done" in the constitution roadmap. Never runs Playwright itself, relies on write-tests'/verify-tasks' evidence instead. Run after verify-tasks confirms tasks.md is fully checked with no open discrepancies.
 ---
 
 # Close feature
@@ -20,9 +20,12 @@ work, [[verify-tasks]] already did that.
   reworded, checked, or unchecked by this skill.
 - Never opens `plan.md` for editing.
 - Never runs `npx playwright test`, not even scoped to one file (see
-  Step 2). This environment is memory-constrained and a fresh Playwright
-  run has crashed the session more than once. `plan-tests` owns running
-  Playwright, scoped safely and with its own crash handling, per
+  Step 2). Running tests is `write-tests`' job, which keeps verifying and
+  executing as separate responsibilities. It also avoids extra browser runs
+  in this memory-limited WSL environment, which crashed in earlier sessions
+  before Playwright was set to one worker on chromium only. `write-tests`
+  owns running this feature's tests (Playwright on chromium only, Vitest
+  scoped to the feature's files), with its own crash handling, per
   `/AGENTS.md`.
 
 ## Step 0 — Confirm the precondition
@@ -59,12 +62,13 @@ not from conversation memory, but from real evidence —
 - Read the real, current code or content the criterion describes (the
   component, the data file, the CSS) and confirm it matches what the
   criterion says, not just that something-shaped exists.
-- Where relevant and cheap, run a check (`npm run lint`, `npm run build`)
-  rather than assume. Never run `npx playwright test` yourself (see Scope).
-  For a criterion whose evidence is a passing test, treat `plan-tests`' last
-  recorded result, or a discrepancy `verify-tasks` already flagged, as the
-  evidence instead of re-running the suite.
-
+- Where relevant and cheap, run a check (`npm run lint`, `npm run build`,
+  `npm test`) rather than assume. Vitest (`npm test`) counts as safe here,
+  it uses jsdom, not a browser. Never run `npx playwright test` yourself
+  (see Scope). For a criterion whose evidence is a passing Playwright test,
+  treat `write-tests`' last reported result, or a discrepancy `verify-tasks`
+  already flagged, as the evidence instead of re-running the suite. If
+  neither exists, ask the user to confirm the tests currently pass.
 ## Step 3 — Mark acceptance criteria
 
 For each `- [ ]` line in `spec.md`:
