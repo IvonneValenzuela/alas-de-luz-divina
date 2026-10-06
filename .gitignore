@@ -30,3 +30,4 @@ dist-ssr
 /playwright/.cache/
 /playwright/.auth/
 test-plans/
+.claude/settings.local.json
