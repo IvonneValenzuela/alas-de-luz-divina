@@ -42,4 +42,4 @@ Describe what changed, in enough detail to be reviewed against `plan.md` and the
 
 ## Step 5 — Report when nothing is left
 
-When an `execute` invocation's Step 1 finds no task left without evidence, don't implement anything, say so plainly instead. Note that every checkbox in `tasks.md` is still unset because this skill never checks them, and that `verify-tasks` should run next to certify each task against evidence and check it off, followed by `review-tests`. The feature is not ready for `close-feature` directly.
+When an `execute` invocation's Step 1 finds no implementation task left without evidence, don't implement anything, say so plainly instead. Note that every checkbox in `tasks.md` is still unset because this skill never checks them, and name the next steps in order: `verify-tasks` to certify each task against evidence and check it off, then `/analyze-test-cases <feature-name>` to propose test cases, the user confirms them in `test-plan.md`, `/write-tests <feature-name>` to write and run them, and `review-tests` as the final audit before `close-feature`.
