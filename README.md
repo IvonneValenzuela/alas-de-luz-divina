@@ -42,6 +42,22 @@ The project focuses on responsive design, accessible content hierarchy, reusable
 
 ---
 
+## 🤖 How this project was built: AI driven development
+
+AI-assisted development workflow
+
+This site was built with AI coding agents (Claude Code), using Spec Driven Development and a harness of rules and skills that keeps the agent inside clear boundaries. 
+
+The harness has three parts:
+
+- **`AGENTS.md`**: the project constitution the agent loads every session, with the stack, structure, design tokens, conventions and hard rules, such as asking instead of assuming, never inventing client content and never committing.
+- **`spec/`**: a spec, plan and task list for every feature, with measurable acceptance criteria.
+- **`.claude/skills/`**: custom skills that run each step of the cycle with fixed instructions, instead of a fresh prompt every time.
+
+Every step ends with a human checkpoint where I review the output and either approve it or send it back for changes. The full step by step workflow, the role of each skill and where I make the decisions are documented in [`spec/README.md`](spec/README.md).
+
+---
+
 ## 🧪 Testing strategy
 
 This project uses the most suitable testing tool at each level:
@@ -93,11 +109,24 @@ npx playwright test --project=chromium
 
 ## 🛠️ Tech stack
 
+**Front end**
 - React
 - TypeScript
 - Vite
-- Tailwind CSS
+- Tailwind CSS v4
 - React Icons
+
+**Testing**
+- Vitest + React Testing Library (unit and component tests)
+- Playwright (end to end tests)
+
+**Deployment**
+- AWS CodePipeline and CodeBuild (CI/CD)
+- Amazon S3 + CloudFront (hosting)
+- AWS Certificate Manager (HTTPS)
+
+**AI assisted development**
+- Claude Code and OpenCode, with Spec Driven Development and custom skills
 
 ---
 
@@ -105,9 +134,15 @@ npx playwright test --project=chromium
 
 ```text
 alas-de-luz-divina/
+├── .claude/
+│   └── skills/                  
+│   ├── workflows/
+│   └── PULL_REQUEST_TEMPLATE.md
 ├── client/
 │   ├── App.tsx
 │   ├── index.tsx
+│   ├── test-setup.ts
+│   ├── vite-env.d.ts
 │   ├── components/
 │   │   ├── Navbar
 │   │   ├── Hero
@@ -119,34 +154,44 @@ alas-de-luz-divina/
 │   │   ├── FAQ
 │   │   └── Footer
 │   ├── data/
+│   │   ├── about.ts
+│   │   ├── benefits.ts
+│   │   ├── faq.ts
 │   │   ├── services.ts
+│   │   ├── social-links.ts
+│   │   ├── story.ts
 │   │   ├── testimonials.ts
 │   │   └── types.ts
-│   ├── styles/
-│   │   └── main.css
-│   └── test-setup.ts
-├── tests/
-│   ├── unit/
-│   ├── component/
-│   └── e2e/
-│       └── pages/
-│           └── HomePage.ts
+│   └── styles/
+│       └── main.css
+├── public/
 ├── spec/
+│   ├── README.md                
 │   ├── constitution/
 │   │   └── constitution.md
 │   └── features/
-├── public/
+├── tests/
+│   ├── unit/
+│   ├── component/
+│   ├── e2e/
+│   │   └── pages/
+│   │       └── HomePage.ts
+│   └── test-plan/
+│       └── final-test-cases.md
 ├── .gitignore
+├── AGENTS.md                    
+├── buildspec.yml                ← AWS CodeBuild configuration
+├── CLAUDE.md
 ├── eslint.config.js
 ├── index.html
+├── package-lock.json
 ├── package.json
 ├── playwright.config.ts
 ├── README.md
-├── tsconfig.json
 ├── tsconfig.app.json
+├── tsconfig.json
 ├── tsconfig.node.json
-├── vite.config.ts
-└── .github/
+└── vite.config.ts
 ```
 
 ---
